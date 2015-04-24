@@ -1,0 +1,48 @@
+<!DOCTYPE html class="no-js">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <script src="../js/dist/head.min.js"></script>
+    <script src="../js/config.js"></script>
+    <script>
+    var config = new Config();
+    head.load([
+        config.path + "js/dist/jquery-2.1.3.min.js",
+        config.path + "js/dist/mustache.min.js",
+        //"../js/dist/signals.min.js",
+        //"../js/dist/crossroads.min.js",
+        config.path + "css/dist/foundation.min.css",
+        config.path + "css/main.css",
+        config.path + "js/main.js"
+    ]);
+    head.ready(function() {
+        $('body').slideDown("slow");
+    });
+    </script>
+    <!--
+<script src="modernizr.custom.45600.js"></script>
+<script>
+    Modernizr.load({
+        load: [
+            "jquery-2.1.3.min.js",
+            "mustache.min.js",
+            "main.js",
+            "foundation.min.css"
+        ],
+        complete: function() {
+            $('body').fadeIn();
+        }
+    });
+</script>
+-->
+</head>
+
+<body style="display:none" id="body">
+    <h3><a href="../index">Back to index</a></h3>
+    <script type="text/template" id="tmpl-node" container="detalle-post" class="detalle">
+        <h2>{{title}}</h2>
+        <p class="">{{body}}</p>
+    </script>
+</body>
+
+</html>

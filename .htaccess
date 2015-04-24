@@ -1,0 +1,12 @@
+Options -MultiViews +FollowSymLinks
+RewriteEngine On
+#RewriteCond %{REQUEST_FILENAME} !-d
+#RewriteCond %{REQUEST_FILENAME} !-f
+#RewriteRule ^([^\.]+)$ $1.html [NC,L]
+
+RewriteRule ^index/?$ index.html [L,QSA]
+RewriteRule ^post/(.*)/?$ post.html?nid=$1 [L,QSA]
+RewriteRule ^user/(.*)/?$ user.html?nid=$1 [L,QSA]
+
+
+ErrorDocument 404 /404.htm

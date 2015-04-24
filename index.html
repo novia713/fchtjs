@@ -1,0 +1,54 @@
+<!DOCTYPE html class="no-js">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <script src="js/dist/head.min.js"></script>
+    <script>
+    head.load([
+        "js/dist/jquery-2.1.3.min.js",
+        "js/dist/mustache.min.js",
+        //"js/dist/signals.min.js",
+        //"js/dist/crossroads.min.js",
+        "js/config.js", "js/main.js",
+        "css/dist/foundation.min.css",
+        "css/main.css"
+    ]);
+    head.ready(function() {
+        $('body').slideDown("slow");
+    });
+    </script>
+    <!--
+<script src="modernizr.custom.45600.js"></script>
+<script>
+    Modernizr.load({
+        load: [
+            "jquery-2.1.3.min.js",
+            "mustache.min.js",
+            "main.js",
+            "foundation.min.css"
+        ],
+        complete: function() {
+            $('body').fadeIn();
+        }
+    });
+</script>
+-->
+</head>
+
+<body style="display:none" id="body">
+    <script type="text/template" id="tmpl-uno" container="uno" class="container-uno">
+        {{#a_elems}}
+        <h2><a href="post/{{id}}">{{title}}</a></h2>
+        <p class="elipsis">{{body}}</p>
+        {{/a_elems}}
+    </script>
+    <!-- <div container="dos" style="display:none"> -->
+    <script type="text/template" id="tmpl-dos" container="dos" class="container-dos">
+        {{#b_elems}}
+        <h2><a href="user/{{id}}">{{name}}</a> </h2>
+        <p class="elipsis">{{email}}</p>
+        {{/b_elems}}
+    </script>
+</body>
+
+</html>
