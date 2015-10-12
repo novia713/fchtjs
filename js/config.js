@@ -6,7 +6,7 @@ function Config() {
             return window.location.toString().split("/").pop();
         },
         this.container_name = "container",
-        this.path = "/gaseosa/fwjsfetch/",
+        this.path = "/fchtjs/",
         this.development = true,
         this.production = false,
         this.nid = (this.get_last_param() > 0) ? this.get_last_param() : "",

@@ -41,7 +41,16 @@
 </head>
 
 <body style="display:none;margin:10%" id="body">
-<br><br><br>
+
+    <div class="ui message">
+  <div class="header">
+    FCHTJS Framework
+  </div>
+  <p>Se puede cargar contenido de un api en cualquier div de la página.</p>
+  <p>Funcionan los botones adelante/atrás del navegador, las URLs son SEO-friendly, pero el contenido no.</p>
+</div>
+
+<br><br>
     <div class="ui top attached tabular menu">
   <a class="active item" data-tab="first">First</a>
   <a class="item" data-tab="second">Second</a>
@@ -61,8 +70,11 @@
       <!-- <div container="dos" style="display:none"> -->
     <script type="text/template" id="tmpl-dos" container="dos" class="container-dos">
         {{#b_elems}}
-        <h2><a href="user/{{id}}">{{name}}</a> </h2>
-        <p class="elipsis">{{email}}</p>
+        <a class="ui blue image label" href="user/{{id}}">
+          <img src="/images/avatar/small/veronika.jpg">
+          {{name}}
+          <div class="detail">{{email}}</div>
+        </a>
         {{/b_elems}}
     </script>
 </div>

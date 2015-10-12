@@ -1,5 +1,6 @@
 "use strict";
 if (typeof config != Object) var config = new Config();
+console.log(config);
 
 var pseudocontroller_time = function(container, data) {
     data[config.controller_data[container]] = data;
@@ -24,7 +25,7 @@ $(document).ready(function() {
         element.replaceWith(div);
 
         //VISUAL EFFECTS
-        $('#' + element.attr("id")).css('background-color', '#' + Math.floor(Math.random() * 16777215).toString(16));
+        //$('#' + element.attr("id")).css('background-color', '#' + Math.floor(Math.random() * 16777215).toString(16));
     };
 
     /** ********** ******** **/
