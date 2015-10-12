@@ -10,11 +10,16 @@
         //"js/dist/signals.min.js",
         //"js/dist/crossroads.min.js",
         "js/config.js", "js/main.js",
-        "css/dist/foundation.min.css",
-        "css/main.css"
+        //"css/dist/foundation.min.css",
+        "js/dist/semantic/semantic.min.js",
+        "js/dist/semantic/tab.js",
+        "css/main.css",
+        "css/dist/semantic/semantic.min.css",
+        "css/dist/semantic/tab.min.css"
     ]);
     head.ready(function() {
-        $('body').slideDown("slow");
+        $('.menu .item').tab();
+        $('body').fadeIn("slow");
     });
     </script>
     <!--
@@ -35,20 +40,33 @@
 -->
 </head>
 
-<body style="display:none" id="body">
-    <script type="text/template" id="tmpl-uno" container="uno" class="container-uno">
+<body style="display:none;margin:10%" id="body">
+<br><br><br>
+    <div class="ui top attached tabular menu">
+  <a class="active item" data-tab="first">First</a>
+  <a class="item" data-tab="second">Second</a>
+</div>
+
+<div class="ui bottom attached active tab segment" data-tab="first">
+  <script type="text/template" id="tmpl-uno" container="uno" class="container-uno">
         {{#a_elems}}
         <h2><a href="post/{{id}}">{{title}}</a></h2>
         <p class="elipsis">{{body}}</p>
         {{/a_elems}}
     </script>
-    <!-- <div container="dos" style="display:none"> -->
+</div>
+
+
+    <div class="ui bottom attached tab segment" data-tab="second">
+      <!-- <div container="dos" style="display:none"> -->
     <script type="text/template" id="tmpl-dos" container="dos" class="container-dos">
         {{#b_elems}}
         <h2><a href="user/{{id}}">{{name}}</a> </h2>
         <p class="elipsis">{{email}}</p>
         {{/b_elems}}
     </script>
+</div>
+
 </body>
 
 </html>
