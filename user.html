@@ -2,20 +2,23 @@
 
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-  <script src="../js/dist/head.min.js"></script>
-  <script src="../js/config.js"></script>
+    <script src="../js/dist/head.min.js"></script>
+    <script src="../js/config.js"></script>
   <script>
+    var config = new Config();
     head.load([
-      config.path + "js/dist/jquery-2.1.3.min.js",
-      config.path + "js/dist/mustache.min.js",
-      //"../js/dist/signals.min.js",
-      //"../js/dist/crossroads.min.js",
-      config.path + "css/dist/foundation.min.css",
-      config.path + "css/main.css",
-      config.path + "js/main.js"
+        config.path + "js/dist/jquery-2.1.3.min.js",
+        config.path + "js/dist/transparency.min.js",
+        //"../js/dist/signals.min.js",
+        //"../js/dist/crossroads.min.js",
+        config.path + "js/main.js",
+        config.path + "js/dist/semantic/semantic.min.js",
+        config.path + "css/main.css",
+        config.path + "css/dist/semantic/semantic.min.css",
+        "//cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.1.4/components/card.min.css"
     ]);
     head.ready(function() {
-      $('body').slideDown("slow");
+        $('body').slideDown("slow");
     });
   </script>
 
@@ -38,18 +41,43 @@
 
 </head>
 
-<body style="display:none" id="body">
+<body style="display:none;margin:10%" id="body">
   <h3><a href="../index">Back to index</a></h3>
-  <script type="text/template" id="tmpl-node" container="detalle-user" class="detalle">
+  <div container="detalle-user" class="detalle-user">
 
-    <h2>{{name}}</h2>
-    <p class="">{{email}}</p>
-    <p class="">{{address.city}}</p>
-    <p class="">{{phone}}</p>
-    <p class="">{{website}}</p>
+    <h2 class="name"></h2>
 
-  </script>
 
+
+
+<div class="ui link cards">
+  <div class="card">
+    <div class="image">
+      <img src="../images/matthew.png">
+    </div>
+    <div class="content">
+      <div class="header name"></div>
+      <div class="meta">
+        <a>Friends</a>
+      </div>
+      <div class="description">
+        <p class="email"></p>
+        <p class="address.city"></p>
+      </div>
+    </div>
+    <div class="extra content">
+      <span class="right floated">
+       <div class="website"></div>
+      </span>
+      <span>
+        <i class="user icon"></i>
+        <div class="phone"></div>
+      </span>
+    </div>
+  </div>
+
+  </div>
+</div>
 </body>
 
 </html>

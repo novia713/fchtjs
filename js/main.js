@@ -1,12 +1,6 @@
 "use strict";
 if (typeof config != Object) var config = new Config();
-console.log(config);
-
-var pseudocontroller_time = function(container, data) {
-    data[config.controller_data[container]] = data;
-    return data;
-};
-
+//console.log(config);
 
 $(document).ready(function() {
 
@@ -14,27 +8,9 @@ $(document).ready(function() {
         return (url.indexOf("http") >= 0) ? "jsonp" : "json";
     };
 
-    var parse_tpl = function(element, obj) {
-
-        var template = element.html();
-        Mustache.parse(template);
-        var div = document.createElement('div');
-        div.setAttribute('id', element.attr("id"));
-        div.setAttribute('class', element.attr("class"));
-        div.innerHTML = Mustache.render(template, obj);
-        element.replaceWith(div);
-
-        //VISUAL EFFECTS
-        //$('#' + element.attr("id")).css('background-color', '#' + Math.floor(Math.random() * 16777215).toString(16));
-    };
-
-    /** ********** ******** **/
-    /** CONTAINERS AUTOLOAD **/
-    /** ********** ******** **/
 
     $("[" + config.container_name + "]").each(function() {
         var container = $(this).attr("container");
-        var container_elem = $(this);
 
         $.ajax({
             url: config.urls[container],
@@ -44,15 +20,26 @@ $(document).ready(function() {
 
             //console.log(data);
 
-            parse_tpl(
-                container_elem,
-                pseudocontroller_time(container, data));
+            var directives = {
+                //gestión de links, porque el Transparency éste es una chusta :/
+                link_posts: {
+                        href: function(params){
+                            return config.post_detail_file_name_for_link + "/" + this.id;
+                        }
+                },
+
+                link_users: {
+                        href: function(params){
+                            return config.user_detail_file_name_for_link + "/" + this.id;
+                        }
+                }
+            };
+
+            $('.' + container).render( data, directives );
+
 
         });
 
     });
 
-    /** *** ********** ******** **/
-    /** END CONTAINERS AUTOLOAD **/
-    /** *** ********** ******** **/
 });
