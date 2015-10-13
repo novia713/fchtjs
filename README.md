@@ -30,6 +30,6 @@ Un ejemplo: `<div container="uno" class="uno">`
 3. si necesitas alguna librería javascript, añádela en el array que carga Head.js
 4. necesitas crear una página HMTL por cada tramo de URL al que llames.
 Un ejemplo: puedes tener en tu app sólo 2 URLs: "/users" (un listado) y "/user/11" (el detalle de cada uno)
-pues tienes que crear un "users.html" y un "user.html"
+pues tienes que crear un "users.html" y un "user.html". Después tienes que configurar el *.htaccess*
 5. mas o menos, eso es todo :)
 
