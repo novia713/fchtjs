@@ -36,10 +36,20 @@ $(document).ready(function() {
             };
 
             $('.' + container).render( data, directives );
+            console.info("Time until ajax content load in container "+ container +": ", Date.now()-timerStart + " ms");
 
 
+        }).fail(function() {
+            console.log( "error in ajax fetching contents" );
         });
 
     });
 
+
+    console.info("Time until DOMready: ", Date.now()-timerStart + " ms");
+
+});
+
+$(window).load(function() {
+    console.info("Time until everything loaded: ", Date.now()-timerStart + " ms");
 });

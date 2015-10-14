@@ -1,7 +1,9 @@
 'use strict';
+var timerStart = Date.now();
 
 function Config() {
-    this.get_last_param = function() {
+
+        this.get_last_param = function() {
             // el nid debe ser el último tramo en la URL
             return window.location.toString().split("/").pop();
         },
