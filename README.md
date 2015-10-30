@@ -33,3 +33,5 @@ Un ejemplo: puedes tener en tu app sólo 2 URLs: "/users" (un listado) y "/user/
 pues tienes que crear un "users.html" y un "user.html". Después tienes que configurar el *.htaccess*
 5. mas o menos, eso es todo :)
 
+## TODO:
+ * hacer el renderizado de cada capa con un webworker
